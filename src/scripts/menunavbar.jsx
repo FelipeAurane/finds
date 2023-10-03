@@ -1,8 +1,11 @@
 const list = document.querySelectorAll('.list');
-function activeLink(){
-    list.forEach((item) =>
-    item.classList.remove('active'));
-    this.classList.add('active')
+
+function activeLink() {
+  list.forEach((item) => item.classList.remove('active'));
+  this.classList.add('active');
 }
-list.forEach((item) =>
-item.addEventListener('click', activeLink))
+
+list.forEach((item) => {
+  item.addEventListener('click', activeLink);
+  item.addEventListener('touchstart', activeLink); // Adicione o evento de toque (touchstart)
+});
