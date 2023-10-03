@@ -1,61 +1,81 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '../public/favicon-32x32.png';
-import { FaHome, FaSearch, FaEnvelope, FaCog } from 'react-icons/fa'; // Importe os ícones
-import './App.css';
-
+import React, { useState } from "react";
+import 'boxicons'
+import "remixicon/fonts/remixicon.css";
+import "./App.css";
+import "./scripts/menunavbar.jsx";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="Container">
+        <div className="navigation">
+          <ul>
+            <li className="list active">
+              <a href="#">
+                <span className="icon">
+                <box-icon type='solid' name='carousel'></box-icon>
+                </span>
+                <span className="text">Inicio</span>
+              </a>
+            </li>
+            <li className="list">
+              <a href="#">
+                <span className="icon">
+                <box-icon className="icons" type='solid' name='carousel'></box-icon>
+                </span>
+                <span className="text">Buscar</span>
+              </a>
+            </li>
+            <li className="list">
+              <a href="#">
+                <span className="icon">
+                <box-icon type='solid' name='carousel'></box-icon>
+                </span>
+                <span className="text">Criar</span>
+              </a>
+            </li>
+            <li className="list">
+              <a href="#">
+                <span className="icon">
+                <box-icon type='solid' name='carousel'></box-icon>
+                </span>
+                <span className="text">Marcar</span>
+              </a>
+            </li>
+            <li className="list">
+              <a href="#">
+                <span className="icon">
+                <box-icon type='solid' name='carousel'></box-icon>
+                </span>
+                <span className="text">Eu</span>
+              </a>
+            </li>
+            <div className="indicator"></div>
+          </ul>
+        </div>
+        <section>
+          {/* Conteúdo das seções aqui */}
+          <div id="home">
+            <h2>Inicio</h2>
+          </div>
 
-      {/* Menu de Navegação Horizontal na Parte Inferior */}
-      <nav className="bottom-navigation">
-        <ul>
-          <li>
-            <a href="/">
-              <FaHome />
-            </a>
-          </li>
-          <li>
-            <a href="/search">
-              <FaSearch />
-            </a>
-          </li>
-          <li>
-            <a href="/messages">
-              <FaEnvelope />
-            </a>
-          </li>
-          <li>
-            <a href="/settings">
-              <FaCog />
-            </a>
-          </li>
-        </ul>
-      </nav>
+          <div id="search">
+            <h2>Buscar</h2>
+          </div>
+
+          <div id="add">
+            <h2>Criar Evento</h2>
+          </div>
+
+          <div id="marcar">
+            <h2>Marcar</h2>
+          </div>
+
+          <div id="profile">
+            <h2>Perfil</h2>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
